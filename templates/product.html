@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+          <img src="{{ item.image.url }}"class="img-fluid" alt="">
+         <!-- <img src="https://scontent.fdac14-1.fna.fbcdn.net/v/t39.30808-6/254549913_1727938970730928_5595183022493245702_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=730e14&_nc_ohc=5J7GzvASTmEAX8e-inW&_nc_ht=scontent.fdac14-1.fna&oh=00_AT_oZiWSJKBkoqmc9hcIadT58CYCpX1SDNuDsSySQdwswQ&oe=625E4897" class="img-fluid" alt="" > -->
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+            <div class="mb-3">
+              <a href="">
+                <span class="badge purple mr-1">{{ object.get_category_display }}</span>
+              </a>
+            </div>
+            <p>{{ object.get_brand_display }}</p>
+            <p class="lead font-weight-bold">{{ object.title }}</p>
+
+            <p class="lead">
+              {% if object.discount_price %}
+              <span class="mr-1">
+                <del>৳{{ object.price }}</del>
+              </span>
+              <span>৳{{ object.discount_price }}</span>
+              {% else %}
+              <span>৳{{ object.price }}</span>
+              {% endif %}
+            </p>
+
+            <p class="lead font-weight-bold">Description</p>
+
+            <p>{{ object.description }}</p>
+
+            {% comment %} <form class="d-flex justify-content-left">
+              <!-- Default input -->
+              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+              <button class="btn btn-primary btn-md my-0 p" type="submit">
+                Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+            </form> {% endcomment %}
+            <a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p">
+              Add to cart
+              <i class="fas fa-shopping-cart ml-1"></i>
+            </a>
+            {% comment %}
+            <a href="{{ object.get_remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p">
+              Remove from cart
+            </a>
+            {% endcomment %}
+          </div>
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <hr>
+
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 text-center">
+
+          <h4 class="my-4 h4">Additional information</h4>
+
+          <p>We are online based shop.
+            Our motto is to serve the Original and Exceptional imported Products to you.
+            We promise to provide Authentic and Classified products.
+            SHIP YOUR GOODS</p>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+
+          <img src="https://scontent.fdac14-1.fna.fbcdn.net/v/t39.30808-6/239919549_1672450002946492_6815884554332822369_n.jpg?stp=dst-jpg_p526x296&_nc_cat=107&ccb=1-5&_nc_sid=730e14&_nc_ohc=i4UTXzrR-CEAX_MLvGX&tn=TMfrz5Ywd-zp9C7T&_nc_ht=scontent.fdac14-1.fna&oh=00_AT91LG_TjePZ4sbp5RMyfFxM3oStetTtX_TcTmmSAgtj5A&oe=625F04C1" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+          <img src="https://scontent.fdac14-1.fna.fbcdn.net/v/t39.30808-6/220252766_1661065544084938_2979945169338214948_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=RMxyxwPJSaYAX8seh0F&tn=TMfrz5Ywd-zp9C7T&_nc_ht=scontent.fdac14-1.fna&oh=00_AT_IJ-w2Um4LTPUeqUAdRPG6S8NK65VPMj3F6bNEjB15JA&oe=626075D8" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+          <img src="https://scontent.fdac14-1.fna.fbcdn.net/v/t39.30808-6/264443683_1748208348703990_223632144121117635_n.jpg?stp=dst-jpg_p526x296&_nc_cat=103&ccb=1-5&_nc_sid=730e14&_nc_ohc=AkRch_HITh8AX9Lua5n&_nc_ht=scontent.fdac14-1.fna&oh=00_AT9leNjgTWjgNgLcqcp8mp2MtnCtu9ruOU0jg0DbARL5Mw&oe=625F2F23" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+  </main>
+
+{% endblock content %}
